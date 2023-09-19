@@ -1,0 +1,158 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Screen Nutrition</title>
+    <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/popup.css">
+  </head>
+  <body>
+    <div>
+      <div class="header" style="background:black;height:60px">
+        <img src="../img/logo.png" style="width:70%;margin-left:10px;margin-top:-1px">
+      </div>
+      <div style="width:92%;border:1px solid gray;border-radius:5px;margin-left:4%;margin-top:20px;height: 220px;">
+        <div style="position:absolute;width:100px;height:20px;border:1px solid gray;margin-top:-10px;margin-left:20px;background:white;border-radius:50px;">
+          <h6 style="text-align:center;margin:0px;font-size: 13px;">Settings</h6>
+        </div>
+         <br><br>
+        
+        <h6 style="
+    background: #5d9209;
+    width: 92px;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 0px;
+    margin-left: 10px;
+    float: left;
+    opacity: 0.8;
+    text-align:center;
+">Healthy<br>0 - <b class="min">0</b> min</h6>
+<h6 style="
+    background: #c39a02;
+    width: 92px;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 0px;
+    margin-left: 10px;
+    float: left;
+    opacity: 0.8;
+    text-align:center;
+">Warning<br><b class="min">0</b> - <b class="max"></b> min</h6>
+<h6 style="
+    background: #9b2929;
+    width: 92px;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 0px;
+    margin-left: 10px;
+    float: left;
+    opacity: 0.8;
+    text-align: center;
+"> Unhealthy<br><b class="max"></b>+ min</h6>
+        <div class="h" style="width:40%;float:left;margin-left:5%;margin-top:20px">
+          <label style="width:100%;font-size: 13px;float: left;">Healthy <span style="
+    font-size: 11px;
+"></span></label>
+          <br>
+          <input type="number" name="" style="width:60px;text-align:center;font-size:17px;margin-top: 6px;float: left;height: 34px;border-radius: 5px 0px 0px;border: 1px solid gray;" id="min">
+          <div style=" width: 50px;
+    height: 34px;
+    background: gray;
+    float: left;
+    margin-top: 6px;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding-top: 9px;
+">Min</div>
+        </div>
+        <div class="h" style="width:40%;float:left;margin-left:15%;margin-top:20px">
+          <label style="width:100%;font-size: 13px;float: left;">Unhealthy <span style="
+    font-size: 11px;
+"></span></label>
+          <br>
+          <input type="number" name="" style="width:60px;text-align:center;font-size:17px;margin-top: 6px;float: left;height: 34px;border-radius: 5px 0px 0px;border: 1px solid gray;" id="max">
+          <div style="
+    width: 50px;
+    height: 34px;
+    background: gray;
+    float: left;
+    margin-top: 6px;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding-top: 9px;
+">Min</div>
+        </div>
+
+        <button style="
+    width: 100px;
+    height: 34px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background: #038fa2;
+    float: right;
+    margi-top: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+" id="save">Save</button>
+      </div>
+<div style="
+    height: 44px;
+    width: 91%;
+    margin-left: 4.5%;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    background: #e7f6f5;
+    border: 1px solid #55a19f;
+    margin-top: 16px;
+" class="bt" link="https://www.screennutrition.org/"><h6 style="
+    color: black;
+    font-size: 14px;
+    margin: 0px;
+    text-align: center;
+    padding-top: 12px;
+    font-weight: 500;
+">Balanced Screen Nutrition <i class="bi bi-box-arrow-up-right" style="margin-left:10px;"></i></h6></div>
+<div style="
+    height: 44px;
+    width: 91%;
+    margin-left: 4.5%;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    background: #e7f6f5;
+    border: 1px solid #55a19f;
+    margin-top: 8px;margin-bottom:20px;
+" class="bt" link="/html/history.html"><h6 style="
+    /* height: 44px; */
+    /* width: 91%; */
+    /* background: gray; */
+    /* margin-left: 4.5%; */
+    /* border-radius: 5px; */
+    color: black;
+    font-size: 14px;
+    margin: 0px;
+    text-align: center;
+    padding-top: 12px;
+    font-weight: 500;
+">View Daily Scrolling time log</h6></div>
+    <script type="text/javascript" src="../js/popup.js"></script>
+  
+</body></html>
