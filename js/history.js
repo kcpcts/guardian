@@ -53,23 +53,31 @@ const displayHistory=(data,min,max)=>{
     $("#total-site").text(totals);
 
     let totalMinutesElement = document.getElementById('total-minutes');
-    
+    let greenBox = document.getElementById('green-box');
+    let yellowBox = document.getElementById('yellow-box');
+    let redBox = document.getElementById('red-box');
+
 
     // Clear previous gradient class
     totalMinutesElement.className = '';
 
     if (totalm > 0 && totalm < min) {
         totalMinutesElement.classList.add('low-gradient');
+        greenBox.style.boxShadow = "0 0 1px 6px rgba(255, 255, 255, 0.8)";
     }
     if (totalm > min && totalm < max) {
-        if (max-totalm < totalm-min)
+        if (max-totalm < totalm-min) {
             totalMinutesElement.classList.add('mid-high-gradient');
+            yellowBox.style.boxShadow = "0 0 1px 6px rgba(255, 255, 255, 0.8)";
+        }
         else {
             totalMinutesElement.classList.add('low-mid-gradient');
+            yellowBox.style.boxShadow = "0 0 1px 6px rgba(255, 255, 255, 0.8)";
         }
     }
     if (totalm > max) {
         totalMinutesElement.classList.add('high-gradient');
+        redBox.style.boxShadow = "0 0 1px 6px rgba(255, 255, 255, 0.8)";
     }
 
     
