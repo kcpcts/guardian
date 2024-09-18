@@ -1,3 +1,23 @@
+const toggleButton = document.getElementById('dark-mode-toggle');
+  const darkModeClass = 'dark-mode';
+
+  // Check local storage for dark mode preference
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add(darkModeClass);
+  }
+
+  // Toggle dark mode
+  toggleButton.addEventListener('click', () => {
+    if (document.body.classList.contains(darkModeClass)) {
+      document.body.classList.remove(darkModeClass);
+      localStorage.setItem('dark-mode', 'disabled');
+    } else {
+      document.body.classList.add(darkModeClass);
+      localStorage.setItem('dark-mode', 'enabled');
+    }
+  });
+
+
 const getTodayDate=()=>{
     let date=new Date(),
         day =date.getDate(),
@@ -31,15 +51,30 @@ const displayHistory=(data,min,max)=>{
     $("#total-minutes").text(totalm.toFixed(1));
     $("#total-period").text(totalp)
     $("#total-site").text(totals);
-    if(totalm>min){
-        if(totalm<max){
-            $("#total-minutes").css({"color":"#f5c102"});
-        }else{
-            $("#total-minutes").css({"color":"#ff4747"});
-        }
-    }else{
-        $("#total-minutes").css({"color":"#90e30e"});
+
+    let totalMinutesElement = document.getElementById('total-minutes');
+    
+
+    // Clear previous gradient class
+    totalMinutesElement.className = '';
+
+    if (totalm > 0 && totalm < min) {
+        totalMinutesElement.classList.add('low-gradient');
     }
+    if (totalm > min && totalm < max) {
+        if (max-totalm < totalm-min)
+            totalMinutesElement.classList.add('mid-high-gradient');
+        else {
+            totalMinutesElement.classList.add('low-mid-gradient');
+        }
+    }
+    if (totalm > max) {
+        totalMinutesElement.classList.add('high-gradient');
+    }
+
+    
+
+    
     $(".min").text(min);
     $(".max").text(max);
 }
