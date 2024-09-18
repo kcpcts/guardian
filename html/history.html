@@ -6,11 +6,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/popup.css">
     <style type="text/css">
     	body, html {
   width: 100%;
 
-  background-color: #f1f1f1;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   min-height: 145px;
@@ -31,65 +32,64 @@
     </div>
     <div class="container">
       	<div class="row">
-      		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;background:white;border-radius:5px;padding-left:20px;padding-top:20px;padding-bottom:20px;margin-top:20px">
+      		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:5px;padding-left:20px;padding-top:20px;padding-bottom:20px;margin-top:20px">
       			<div class="row">
-      				<div class="col-12"><i class="bi bi-stopwatch" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total Scrolling time today: <b id="total-minutes" style="margin-left:73px">0</b> Min</h6>
-                <div style="width:350px;float:right;margin-top:-30px;">
+      				<div class="col-12"><i class="bi bi-stopwatch" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Time Scrolled Today: <b id="total-minutes">0</b> minutes</h6>
+                <div style="width:700px; float:right; margin-top:-30px; margin-left:-50px; display: flex; justify-content: space-between;">
                   <h6 style="
-    background: #5d9209;
-    width: 92px;
-    padding: 5px;
-    color: white;
-    font-size: 13.5px;
-    font-weight: 400;
-    border-radius: 5px;
-    margin: 0px;
-    margin-left: 10px;
-    float: left;
-    opacity: 0.8;
-    text-align:center;
-">Healthy<br>0 - <b class="min">0</b> min</h6>
-<h6 style="
-    background: #c39a02;
-    width: 92px;
-    padding: 5px;
-    color: white;
-    font-size: 13.4px;
-    font-weight: 400;
-    border-radius: 5px;
-    margin: 0px;
-    margin-left: 10px;
-    float: left;
-    opacity: 0.8;
-    text-align:center;
-">Warning<br><b class="min">0</b> - <b class="max"></b> min</h6>
-<h6 style="
-    background: #9b2929;
-    width: 92px;
-    padding: 5px;
-    color: white;
-    font-size: 13.5px;
-    font-weight: 400;
-    border-radius: 5px;
-    margin: 0px;
-    margin-left: 10px;
-    float: left;
-    opacity: 0.8;
-    text-align: center;
-"> Unhealthy<br><b class="max"></b>+ min</h6>
+                    background: #5d9209;
+                    width: 250px;
+                    padding: 10px;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    margin: 0px 10px;
+                    opacity: 0.8;
+                    text-align:center;
+                  "><b class = "low-gradient">Healthy</b><br>0 - <b class="min">0</b> minutes</h6>
+                  
+                  <h6 style="
+                    background: #c39a02;
+                    width: 250px;
+                    padding: 10px;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    margin: 0px 10px;
+                    opacity: 0.8;
+                    text-align:center;
+                  "><b class = "balance">Warning</b><br><b class="min">0</b> - <b class="max"></b> minutes</h6>
+                  
+                  <h6 style="
+                    
+                    background: #9b2929;
+                    width: 250px;
+                    padding: 10px;
+                    
+                    font-size: 20px;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    margin: 0px 10px;
+                    opacity: 0.8;
+                    text-align: center;
+                  "> <b class = "combined-animation">Unhealthy</b><br><b class="max"></b>+ minutes</h6>
                 </div>
+                <button id="dark-mode-toggle" style="position: fixed; top: 10px; right: 10px; background: #333; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Toggle Dark Mode</button>
+
               </div>
-      				<div class="col-12" style="margin-top:0px;"><i class="bi bi-cursor" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total scrolling Page visit frequency: <b id="total-period" style="margin-left:0px">0</b></h6></div>
-      				<div class="col-12" style="margin-top:15px;"><i class="bi bi-globe" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total sites visited: <b id="total-site" style="margin-left:133px">0</b></h6></div>
+      				<div class="col-12" style="margin-top:0px;"><i class="bi bi-cursor" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total visit frequency: <b id="total-period">0</b></h6></div>
+      				<div class="col-12" style="margin-top:15px;"><i class="bi bi-globe" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Number of Sites Visited: <b id="total-site">0</b></h6></div>
       			</div>
       		</div>
-      		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;background:white;border-radius:5px;padding-left:20px;padding-top:10px;padding-bottom:10px;margin-top:20px;padding-top:25px">
+      		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:5px;padding-left:20px;padding-top:10px;padding-bottom:10px;margin-top:20px;padding-top:25px">
       			<table class="table table-bordered">
     <thead>
       <tr>
         <th>Website URL</th>
         <th>Scrolling Time</th>
-        <th>Views</th>
+        <th>Times Viewed</th>
       </tr>
     </thead>
     <tbody id="history"></tbody>
