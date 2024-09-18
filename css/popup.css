@@ -7,6 +7,44 @@ body, html {
   min-height: 145px;
   min-width: 200px;
 }
+/* Dark mode styles */
+.dark-mode body, .dark-mode html {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+.dark-mode .container-fluid {
+  background-color: #000000;
+}
+
+.dark-mode .container {
+  background-color: #000000;
+}
+
+.dark-mode .table {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+.dark-mode .table th, .dark-mode .table td {
+  border-color: #444;
+}
+
+.dark-mode h6 {
+  color: #e0e0e0;
+}
+.dark-mode .dark-mode-container {
+  background-color: #1e1e1e; /* Dark background for containers */
+  color: #e0e0e0; /* Light text color */
+}
+
+.dark-mode .dark-mode-container .btn {
+  background-color: #000000;
+  color: #fff;
+}
+
+
+
 
 * {
   font-family: 'Inter' !important;
@@ -15,3 +53,111 @@ body, html {
 .bt{opacity:0.8}
 .bt:hover{cursor:pointer;color:white!important;background:black!important}
 .bt:hover h6{color:white!important}
+
+.combined-animation {
+  background: linear-gradient(to right, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee, #ff0000);
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 400%;
+  color: transparent;
+  animation: combined-animation 5s linear infinite;
+}
+
+@keyframes combined-animation {
+  0% {
+    text-shadow: 0 0 10px white;
+    opacity: 1;
+    background-position: 0% 0%;
+  }
+  50% {
+    text-shadow: 0 0 20px white;
+    opacity: 0.65;
+  }
+  100% {
+    text-shadow: 0 0 10px white;
+    opacity: 1;
+    background-position: -400% 0%;
+  }
+}
+
+/* Define gradient classes based on categories */
+.low-gradient {
+  background: linear-gradient(to right, #ffffff,#bdff7b, #09bc00,#bdff7b);
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 400%;
+  color: transparent;
+  animation: combined-animation 5s linear infinite;
+}
+
+.mid-high-gradient {
+  background: linear-gradient(to right, #ff8800, #d91f1f, #ff8800);
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 400%;
+  color: transparent;
+  animation: combined-animation 5s linear infinite;
+}
+
+.high-gradient {
+  background: linear-gradient(to right, #ff0000, #ff0000, #ff00ea, #ff0000);
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 400%;
+  color: transparent;
+  animation: combined-animation 5s linear infinite;
+}
+
+.low-mid-gradient {
+  background: linear-gradient(to right, #00b64f, #e5e21e, #f7cc2f, #00b64f);
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 400%;
+  color: transparent;
+  animation: combined-animation 5s linear infinite;
+}
+
+
+.balance {
+  background: linear-gradient(to right, 
+    #00ff00 0%, #00ff00 50%, 
+    #ff0000 50%, #ff0000 100%
+  );
+  background-clip: text;
+  background-origin: text;
+  -webkit-background-clip: text;
+  background-size: 200%;
+  color: transparent;
+  animation: balance 3s linear infinite;
+}
+.balance::selection {
+  text-shadow: inherit;
+}
+
+@keyframes balance {
+  0% {
+    background-position: 50% 0%;
+   
+  }
+  25% {
+    background-position: 40% 0%;
+    
+  }
+  50% {
+    background-position: 50% 0%;
+    
+  }
+  75% {
+    background-position: 60% 0%;
+    
+  }
+  100% {
+    background-position: 50% 0%;
+    
+  }
+}
