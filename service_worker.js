@@ -64,12 +64,12 @@ const displayBadges=(data)=>{
             total=Math.floor(total);
             if(total>min){
                 if(total<max){
-                    changeBadge("#f5c102",`${total} Min`,"Balanced Screen Alert: You have exceeded "+min+" min of Daily scrolling time! Consider a walk outside!");
+                    changeBadge("#f5c102",`${total}`,"Alert: You have exceeded "+min+" min of daily scrolling time! Consider a walk outside!");
                 }else{
-                    changeBadge("#ff4747",`${total} Min`,"Balanced Screen Nutrition Warning: You have exceeded "+max+" min of scrolling time for today");
+                    changeBadge("#ff4747",`${total}`,"Warning: You have exceeded "+max+" miutes of scrolling time for today");
                 }
             }else{
-                changeBadge("#90e30e",`${total} Min`,"Balanced Screen Note:Well Done! You are under "+min+" min of Daily scrolling time!");
+                changeBadge("#90e30e",`${total}`,"Well Done! You are under "+min+" min of Daily scrolling time!");
             }
         }
     })
