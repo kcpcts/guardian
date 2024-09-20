@@ -3,6 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Screen Nutrition</title>
     <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+    <script src="../js/vanilla-tilt.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="../css/popup.css">
@@ -17,21 +19,31 @@
           <h6 style="text-align:center;margin:0px;font-size: 13px;">Settings</h6>
         </div>
          <br><br>
-        
-        <h6 style="
-    background: #5d9209;
-    width: 92px;
-    padding: 5px;
-    color: white;
-    font-size: 12px;
-    font-weight: 400;
-    border-radius: 5px;
-    margin: 0px;
-    margin-left: 10px;
-    float: left;
-    opacity: 0.8;
-    text-align:center;
-">Healthy<br>0 - <b class="min">0</b> min</h6>
+         
+         <h6 class="healthy-card" style="
+         background: #5d9209;
+         width: 92px;
+         padding: 5px;
+         color: white;
+         font-size: 12px;
+         font-weight: 400;
+         border-radius: 5px;
+         margin: 0px;
+         margin-left: 10px;
+         float: left;
+         opacity: 0.8;
+         text-align:center;
+     "
+     data-tilt
+     data-tilt-glare="true"
+     data-tilt-max-glare=".1"
+     data-tilt-scale="1.07"
+     data-tilt-reverse="false"
+     data-tilt-reset="true"
+     
+     >Healthy<br>0 - <b class="min">0</b> min</h6> 
+     <script src="../js/vanilla-tilt.js"></script>
+          
 <h6 style="
     background: #c39a02;
     width: 92px;
@@ -45,7 +57,15 @@
     float: left;
     opacity: 0.8;
     text-align:center;
-">Warning<br><b class="min">0</b> - <b class="max"></b> min</h6>
+"
+data-tilt
+data-tilt-glare="true"
+data-tilt-max-glare=".1"
+data-tilt-scale="1.07"
+data-tilt-reverse="false"
+data-tilt-reset="true"
+>Warning<br><b class="min">0</b> - <b class="max"></b> min</h6> 
+<script src="../js/vanilla-tilt.js"></script>
 <h6 style="
     background: #9b2929;
     width: 92px;
@@ -59,7 +79,15 @@
     float: left;
     opacity: 0.8;
     text-align: center;
-"> Unhealthy<br><b class="max"></b>+ min</h6>
+"
+data-tilt
+data-tilt-glare="true"
+data-tilt-max-glare=".1"
+data-tilt-scale="1.07"
+data-tilt-reverse="false"
+data-tilt-reset="true"
+> Unhealthy<br><b class="max"></b>+ min</h6>
+<script src="../js/vanilla-tilt.js"></script>
         <div class="h" style="width:40%;float:left;margin-left:5%;margin-top:20px">
           <label style="width:100%;font-size: 13px;float: left;">Healthy <span style="
     font-size: 11px;
