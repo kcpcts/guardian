@@ -3,7 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Screen Nutrition</title>
     <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/popup.css">
@@ -18,10 +19,10 @@
   min-width: 200px;
 }
 
-* {
-  font-family: 'Inter' !important;
-  box-sizing: border-box;
-}
+      * {
+            font-family: 'Poppins', sans-serif !important; /* Use Poppins font */
+            box-sizing: border-box;
+        }
     </style>
   </head>
   <body>
@@ -34,8 +35,8 @@
       	<div class="row">
       		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:5px;padding-left:20px;padding-top:20px;padding-bottom:20px;margin-top:20px">
       			<div class="row">
-      				<div class="col-12"><i class="bi bi-stopwatch" style="font-size:40px;float:left;margin-right: 5px;"></i> <h6 style="font-size:30px;margin:0px;margin-left:45px;padding-top:4px;font-weight: 400;"> <u>Time Scrolled Today</u> <br> <b style="font-size:40px" id="total-minutes">0</b> <strong style = "font-size:40px"> minutes</strong> </h6>
-                <div style="width:700px; float:right; margin-top:-30px; margin-left:-50px; display: flex; justify-content: space-between;">
+      				<div class="col-12"><i class="bi bi-stopwatch" style="font-size:40px;float:left;margin-left: -10px;margin-top: 4px;color:#fff"></i> <h6 style="font-size:30px;margin:0px;margin-left:40px;padding-top:-20px;font-weight: 400;"> <b style="font-size:40px" id="total-minutes">0</b> <strong style = "font-size:40px"> minutes</strong> </h6>
+                <div style="width:700px; float:right; margin-top:-30px; margin-left:-49px; display: flex; justify-content: space-between;">
                   <h6 id = "green-box" style="
                     background: #5d9209;
                     width: 250px;
@@ -48,7 +49,7 @@
                     margin: 0px 10px;
                     opacity: 0.8;
                     text-align:center;
-                  "><b class = "low-gradient">Healthy</b><br>0 - <b class="min">0</b> minutes</h6>
+                  "><b>Healthy</b><br>0 - <b class="min">0</b> minutes</h6>
                   
                   <h6 id = "yellow-box" style="
                     background: #c39a02;
@@ -61,7 +62,7 @@
                     margin: 0px 10px;
                     opacity: 0.8;
                     text-align:center;
-                  "><b class = "balance">Warning</b><br><b class="min">0</b> - <b class="max"></b> minutes</h6>
+                  "><b>Warning</b><br><b class="min">0</b> - <b class="max"></b> minutes</h6>
                   
                   <h6 id = "red-box" style="
                     
@@ -75,13 +76,13 @@
                     margin: 0px 10px;
                     opacity: 0.8;
                     text-align: center;
-                  "> <b class = "combined-animation">Unhealthy</b><br><b class="max"></b>+ minutes</h6>
+                  "> <b>Unhealthy</b><br><b class="max"></b>+ minutes</h6>
                 </div>
                 <button id="dark-mode-toggle" style="position: fixed; top: 10px; right: 10px; background: #333; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Toggle Dark Mode</button>
 
               </div>
-      				<div class="col-12" style="margin-top:0px;"><i class="bi bi-cursor" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total visit frequency: <b id="total-period">0</b></h6></div>
-      				<div class="col-12" style="margin-top:15px;"><i class="bi bi-globe" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Number of Sites Visited: <b id="total-site">0</b></h6></div>
+      				<div class="col-12" style="margin-top:0px;"><i class="bi bi-cursor" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> Total Visits: <b id="total-period">0</b></h6></div>
+      				<div class="col-12" style="margin-top:15px;"><i class="bi bi-globe" style="font-size:24px;float:left;"></i> <h6 style="margin:0px;margin-left:30px;padding-top:4px;font-weight: 400;"> # of Sites Visited: <b id="total-site">0</b></h6></div>
       			</div>
       		</div>
       		<div class="col-12" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:5px;padding-left:20px;padding-top:10px;padding-bottom:10px;margin-top:20px;padding-top:25px">
