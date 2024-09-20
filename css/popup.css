@@ -66,24 +66,22 @@ body, html {
 
 @keyframes combined-animation {
   0% {
-    text-shadow: 0 0 10px white;
-    opacity: 1;
+    
     background-position: 0% 0%;
   }
   50% {
-    text-shadow: 0 0 20px white;
-    opacity: 0.65;
+    
+    opacity: 1;
   }
   100% {
-    text-shadow: 0 0 10px white;
-    opacity: 1;
+    
     background-position: -400% 0%;
   }
 }
 
 /* Define gradient classes based on categories */
 .low-gradient {
-  background: linear-gradient(to right, #ffffff,#bdff7b, #09bc00,#bdff7b);
+  background: linear-gradient(to right, #ffffff,#bdff7b, #09bc00,#09bc00, #ffffff);
   background-clip: text;
   background-origin: text;
   -webkit-background-clip: text;
