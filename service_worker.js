@@ -49,6 +49,7 @@ const changeBadge=(color,text,title)=>{
     chrome.action.setBadgeBackgroundColor({color});
     chrome.action.setBadgeText({text});
     chrome.action.setTitle({title});
+    chrome.storage.local.set({ totalMinutes: parseFloat(text)});
 }
 const displayBadges=(data)=>{
     chrome.storage.local.get("setting",(info)=>{
@@ -66,10 +67,10 @@ const displayBadges=(data)=>{
                 if(total<max){
                     changeBadge("#f5c102",`${total}`,"Alert: You have exceeded "+min+" min of daily scrolling time! Consider a walk outside!");
                 }else{
-                    changeBadge("#ff4747",`${total}`,"Warning: You have exceeded "+max+" miutes of scrolling time for today");
+                    changeBadge("#ff4747",`${total}`,"Warning: You have exceeded "+max+" minutes of scrolling time for today");
                 }
             }else{
-                changeBadge("#90e30e",`${total}`,"Well Done! You are under "+min+" min of Daily scrolling time!");
+                changeBadge("#90e30e",`${total}`,"Well Done! You are under "+min+" min of scrolling time!");
             }
         }
     })
@@ -79,7 +80,7 @@ let cd=getTodayDate();
 chrome.storage.local.get(cd,(info)=>{
     if(!info || !info[cd]){
         data=info[cd];
-        chrome.action.setTitle({title:"Balanced Screen Nutrition: Track your daily scrolling for a healthier wellbeing!"});
+        chrome.action.setTitle({title:"Screen Nutrition: Track your scrolling"});
     }
 });
 const reAssign=()=>{
