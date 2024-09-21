@@ -5,7 +5,7 @@
     <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
     <script src="../js/vanilla-tilt.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="../css/popup.css">
   </head>
@@ -13,10 +13,14 @@
     <div>
       <div class="header" style="background:black;height:60px">
         <img src="../img/logo.png" style="width:70%;margin-left:10px;margin-top:-1px">
+        <hr width="100%" size="2">
       </div>
-      <div style="width:92%;border:1px solid gray;border-radius:5px;margin-left:4%;margin-top:20px;height: 220px;">
-        <div style="position:absolute;width:70px;height:20px;border:1px solid gray;margin-top:-10px;margin-left:20px;background:white;border-radius:50px;">
-          <h6 style="text-align:center;margin:0px;font-size: 13px;">Settings</h6>
+      <i class="bi bi-stopwatch" style="font-size:30px;float:left; margin-top: 15px; margin-right: 5px; margin-left:15px; color:#e2e2e2"></i> 
+      <h6 style="font-size:30px;margin:0px;margin-left:40px;margin-top:10px;font-weight: 400;"> <b style="font-size:30px" id="total-minutes">0</b> <strong style = "font-size:30px; color:white"> minutes</strong> </h6>
+
+      <div style="width:92%;border:3px solid rgb(30, 30, 30);border-radius:5px;margin-left:4%;margin-top:10px;height: 275px;">
+        <div style="position:absolute;width:70px;height:20px;border:1px solid gray;margin-top:-10px;margin-left:122px;background:rgb(0, 0, 0);border-radius:5px;">
+          <h6 style="text-align:center;margin:0px;font-size: 13px; color: white">Settings</h6>
         </div>
          <br><br>
          
@@ -41,7 +45,7 @@
      data-tilt-reverse="false"
      data-tilt-reset="true"
      
-     >Healthy<br>0 - <b class="min">0</b> min</h6> 
+     ><b>Healthy</b><br><b>0</b> - <b class="min">0</b> min</h6> 
      <script src="../js/vanilla-tilt.js"></script>
           
 <h6 style="
@@ -64,7 +68,7 @@ data-tilt-max-glare=".1"
 data-tilt-scale="1.07"
 data-tilt-reverse="false"
 data-tilt-reset="true"
->Warning<br><b class="min">0</b> - <b class="max"></b> min</h6> 
+><b>Warning</b><br><b class="min">0</b> - <b class="max"></b> min</h6> 
 <script src="../js/vanilla-tilt.js"></script>
 <h6 style="
     background: #9b2929;
@@ -86,59 +90,41 @@ data-tilt-max-glare=".1"
 data-tilt-scale="1.07"
 data-tilt-reverse="false"
 data-tilt-reset="true"
-> Unhealthy<br><b class="max"></b>+ min</h6>
+> <b>Unhealthy</b><br><b class="max"></b>+ min</h6>
 <script src="../js/vanilla-tilt.js"></script>
         <div class="h" style="width:40%;float:left;margin-left:5%;margin-top:20px">
-          <label style="width:100%;font-size: 13px;float: left;">Healthy <span style="
-    font-size: 11px;
-"></span></label>
+          
           <br>
-          <input type="number" name="" style="width:60px;text-align:center;font-size:17px;margin-top: 6px;float: left;height: 34px;border-radius: 5px 0px 0px;border: 1px solid gray;" id="min">
-          <div style=" width: 50px;
-    height: 34px;
-    background: gray;
-    float: left;
-    margin-top: 6px;
-    border-radius: 0px 5px 5px 0px;
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    padding-top: 9px;
-">Min</div>
-        </div>
-        <div class="h" style="width:40%;float:left;margin-left:15%;margin-top:20px">
-          <label style="width:100%;font-size: 13px;float: left;">Unhealthy <span style="
-    font-size: 11px;
-"></span></label>
-          <br>
-          <input type="number" name="" style="width:60px;text-align:center;font-size:17px;margin-top: 6px;float: left;height: 34px;border-radius: 5px 0px 0px;border: 1px solid gray;" id="max">
-          <div style="
-    width: 50px;
-    height: 34px;
-    background: gray;
-    float: left;
-    margin-top: 6px;
-    border-radius: 0px 5px 5px 0px;
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    padding-top: 9px;
-">Min</div>
-        </div>
 
-        <button style="
-    width: 100px;
-    height: 34px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background: #038fa2;
-    float: right;
-    margin-top: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-" id="save">Save</button>
+
+
+
+
+
+
+          
+          <div class="double_range_slider_box">
+            <div class="double_range_slider">
+              <span class="range_track" id="range_track"></span>
+        
+              <input type="range" class="min" min="1" max="180" value="0" step="0">
+              <input type="range" class="max" min="1" max="180" value="20" step="0">
+        
+              <div class="minvalue"></div>
+              <div class="maxvalue"></div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        
       </div>
 <div style="
     height: 44px;
@@ -147,9 +133,9 @@ data-tilt-reset="true"
     border-radius: 5px;
     color: white;
     font-size: 13px;
-    background: #e7f6f5;
-    border: 1px solid #55a19f;
-    margin-top: 16px;
+    background: #ffffff;
+    border: 3px solid #55a19f;
+    margin-top: 250px;
 " class="bt" link="https://www.screennutrition.org/"><h6 style="
     color: black;
     font-size: 14px;
@@ -157,7 +143,13 @@ data-tilt-reset="true"
     text-align: center;
     padding-top: 12px;
     font-weight: 500;
-">Balanced Screen Nutrition<i class="bi bi-box-arrow-up-right" style="margin-left:10px;"></i></h6></div>
+" data-tilt
+     
+     data-tilt-scale="1.2"
+     data-tilt-reverse="false"
+     data-tilt data-tilt-axis="y"
+     data-tilt-reset="true">Screen Nutrition<i class="bi bi-box-arrow-up-right" style="margin-left:10px;"></i></h6></div>
+     <script src="../js/vanilla-tilt.js"></script>
 <div style="
     height: 44px;
     width: 91%;
@@ -165,14 +157,14 @@ data-tilt-reset="true"
     border-radius: 5px;
     color: white;
     font-size: 13px;
-    background: #e7f6f5;
-    border: 1px solid #55a19f;
-    margin-top: 8px;margin-bottom:20px;
+    background: #ffffff;
+    border: 3px solid #55a19f;
+    margin-top: 10px;margin-bottom:20px;
 " class="bt" link="/html/history.html"><h6 style="
     /* height: 44px; */
     /* width: 91%; */
     /* background: gray; */
-    /* margin-left: 4.5%; */
+    /* margin-left: 4.5%; */ 
     /* border-radius: 5px; */
     color: black;
     font-size: 14px;
@@ -180,7 +172,13 @@ data-tilt-reset="true"
     text-align: center;
     padding-top: 12px;
     font-weight: 500;
-">Scrolling Time Log</h6></div>
+" data-tilt
+ 
+     data-tilt-scale="1.2"
+     data-tilt-reverse="false"
+     data-tilt data-tilt-axis="y"
+     data-tilt-reset="true">Scrolling Time Log</h6></div>
     <script type="text/javascript" src="../js/popup.js"></script>
+    <script src="../js/vanilla-tilt.js"></script>
   
 </body></html>
