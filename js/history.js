@@ -1,23 +1,3 @@
-const toggleButton = document.getElementById('dark-mode-toggle');
-  const darkModeClass = 'dark-mode';
-
-  // Check local storage for dark mode preference
-  if (localStorage.getItem('dark-mode') === 'enabled') {
-    document.body.classList.add(darkModeClass);
-  }
-
-  // Toggle dark mode
-  toggleButton.addEventListener('click', () => {
-    if (document.body.classList.contains(darkModeClass)) {
-      document.body.classList.remove(darkModeClass);
-      localStorage.setItem('dark-mode', 'disabled');
-    } else {
-      document.body.classList.add(darkModeClass);
-      localStorage.setItem('dark-mode', 'enabled');
-    }
-  });
-
-
 const getTodayDate=()=>{
     let date=new Date(),
         day =date.getDate(),
