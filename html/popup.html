@@ -24,7 +24,7 @@
         </div>
          <br><br>
          
-         <h6 class="healthy-card" style="
+         <h6 id="green-box" class = "card-box" style="
          background: #5d9209;
          width: 92px;
          padding: 5px;
@@ -42,13 +42,15 @@
      data-tilt-glare="true"
      data-tilt-max-glare=".1"
      data-tilt-scale="1.07"
+     data-tilt-axis="x";
      data-tilt-reverse="false"
      data-tilt-reset="true"
      
      ><b>Healthy</b><br><b>0</b> - <b class="min">0</b> min</h6> 
      <script src="../js/vanilla-tilt.js"></script>
           
-<h6 style="
+<h6 class = "card-box" id ="yellow-box" style="
+
     background: #c39a02;
     width: 92px;
     padding: 5px;
@@ -67,15 +69,19 @@ data-tilt-glare="true"
 data-tilt-max-glare=".1"
 data-tilt-scale="1.07"
 data-tilt-reverse="false"
+data-tilt-axis="x";
 data-tilt-reset="true"
 ><b>Warning</b><br><b class="min">0</b> - <b class="max"></b> min</h6> 
 <script src="../js/vanilla-tilt.js"></script>
-<h6 style="
+
+
+<h6 class = "card-box" id = "red-box" style="
     background: #9b2929;
     width: 92px;
     padding: 5px;
     color: white;
     font-size: 12px;
+    
     font-weight: 400;
     border-radius: 5px;
     margin: 0px;
@@ -88,6 +94,7 @@ data-tilt
 data-tilt-glare="true"
 data-tilt-max-glare=".1"
 data-tilt-scale="1.07"
+data-tilt-axis="x";
 data-tilt-reverse="false"
 data-tilt-reset="true"
 > <b>Unhealthy</b><br><b class="max"></b>+ min</h6>
@@ -126,30 +133,33 @@ data-tilt-reset="true"
 
         
       </div>
+
+
 <div style="
     height: 44px;
     width: 91%;
     margin-left: 4.5%;
     border-radius: 5px;
-    color: white;
+    color: rgba(255, 255, 255, 0.138);
     font-size: 13px;
-    background: #ffffff;
-    border: 3px solid #55a19f;
+    
     margin-top: 250px;
-" class="bt" link="https://www.screennutrition.org/"><h6 style="
+" class="bt card" link="/html/history.html"><h6 style="
     color: black;
     font-size: 14px;
     margin: 0px;
     text-align: center;
     padding-top: 12px;
     font-weight: 500;
-" data-tilt
-     
-     data-tilt-scale="1.2"
+    z-index: 5;"
+     data-tilt
+     data-tilt-scale="1.009"
      data-tilt-reverse="false"
      data-tilt data-tilt-axis="y"
-     data-tilt-reset="true">Screen Nutrition<i class="bi bi-box-arrow-up-right" style="margin-left:10px;"></i></h6></div>
+     data-tilt-reset="true">Scrolling Time Log<i class="bi bi-box-arrow-up-right" style="margin-left:10px;"></i></h6>
      <script src="../js/vanilla-tilt.js"></script>
+    </div>
+     
 <div style="
     height: 44px;
     width: 91%;
@@ -157,10 +167,10 @@ data-tilt-reset="true"
     border-radius: 5px;
     color: white;
     font-size: 13px;
-    background: #ffffff;
-    border: 3px solid #55a19f;
+    background: #c1c1c1;
+    border: 3px solid #00a53a;
     margin-top: 10px;margin-bottom:20px;
-" class="bt" link="/html/history.html"><h6 style="
+" class="bt" link="https://www.screennutrition.org/"><h6 style="
     /* height: 44px; */
     /* width: 91%; */
     /* background: gray; */
@@ -177,7 +187,7 @@ data-tilt-reset="true"
      data-tilt-scale="1.2"
      data-tilt-reverse="false"
      data-tilt data-tilt-axis="y"
-     data-tilt-reset="true">Scrolling Time Log</h6></div>
+     data-tilt-reset="true">Screen Nutrition</h6></div>
     <script type="text/javascript" src="../js/popup.js"></script>
     <script src="../js/vanilla-tilt.js"></script>
   
