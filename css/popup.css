@@ -86,7 +86,7 @@ body, html {
 }
 
 .low-mid-gradient {
-  background: linear-gradient(to right, #00b64f, #e5e21e, #f7cc2f, #00b64f);
+  background: linear-gradient(to right, #e5e21e, #00b64f, #00b64f, #f7cc2f);
   background-clip: text;
   background-origin: text;
   -webkit-background-clip: text;
