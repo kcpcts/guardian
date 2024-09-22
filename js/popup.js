@@ -13,13 +13,13 @@ const init=()=>{
 			
 
 			rangeInput[0].value = info.setting.min;
-            rangeInput[1].value = info.setting.max;
-            setMinValueOutput();
-            setMaxValueOutput();
-            minRangeFill();
-            maxRangeFill();
-            MinVlaueBubbleStyle();
-            MaxVlaueBubbleStyle();
+      rangeInput[1].value = info.setting.max;
+      setMinValueOutput();
+      setMaxValueOutput();
+      minRangeFill();
+      maxRangeFill();
+      MinVlaueBubbleStyle();
+      MaxVlaueBubbleStyle();
 			assignInfo();
 		}
 	})
@@ -131,6 +131,17 @@ rangeInput.forEach((input) => {
   });
 });
 
+
+function selectCard(cardId) {
+  // Remove 'selected' class from all cards
+  document.querySelectorAll('#green-box, #yellow-box, #red-box').forEach(card => {
+    card.classList.remove('selected');
+  });
+
+  // Add 'selected' class to the clicked card
+  document.getElementById(cardId).classList.add('selected');
+}
+
 chrome.storage.local.get('totalMinutes', (data) => {
   if (data.totalMinutes !== undefined) {
       let totalm = data.totalMinutes;
@@ -138,29 +149,69 @@ chrome.storage.local.get('totalMinutes', (data) => {
       let truncatedMinutes = Math.floor(totalm); // Truncate the decimal
       document.getElementById('total-minutes').textContent = `~${truncatedMinutes}`; // Add ~ to the beginning
       let totalMinutesElement = document.getElementById('total-minutes');
+      let greenBox = document.getElementById('green-box');
+      let yellowBox = document.getElementById('yellow-box');
+      let redBox = document.getElementById('red-box');
       totalMinutesElement.className = '';
-       
       let min = rangeInput[0].value;
       let max = rangeInput[1].value;
-      console.log(min);
-      console.log(max);
-      console.log(totalm);
+      
 
 
 
     if (totalm > 0 && totalm < min) {
         totalMinutesElement.classList.add('low-gradient');
+        
+        greenBox.style.boxShadow = "0 0 1px 2px rgba(255, 255, 255, 0.8)";
+        selectCard('green-box');
+        yellowBox.style.background = "#735e12";
+        yellowBox.style.color = "#121212";
+        redBox.style.color = "#121212";
+        redBox.style.background = "#501f1f";
+        
+
     }
     if (totalm > min && totalm < max) {
+        
         if (max-totalm < totalm-min) {
             totalMinutesElement.classList.add('mid-high-gradient');
+            selectCard('yellow-box');
+            yellowBox.style.boxShadow = "0 0 1px 2px rgba(255, 255, 255, 0.8)";
+            
+            redBox.style.color = "#121212";
+            redBox.style.background = "#501f1f";
+            greenBox.style.color = "#121212";
+            greenBox.style.background = "#395708";
         }
         else {
+            
             totalMinutesElement.classList.add('low-mid-gradient');
+            selectCard('yellow-box');
+            yellowBox.style.boxShadow = "0 0 1px 2px rgba(255, 255, 255, 0.8)";
+            
+            redBox.style.color = "#121212";
+            redBox.style.background = "#501f1f";
+            greenBox.style.color = "#121212";
+            greenBox.style.background = "#395708";
         }
     }
     if (totalm > max) {
+        
         totalMinutesElement.classList.add('high-gradient');
+        redBox.style.boxShadow = "0 0 1px 2px rgba(255, 255, 255, 0.8)";
+        selectCard('red-box');
+        greenBox.style.color = "#121212";
+        greenBox.style.background = "#395708";
+        yellowBox.style.background = "#735e12";
+        yellowBox.style.color = "#121212";
     }
+
+
+
+
+
+  }
+  else {
+    selectCard('green-box');
   }
 });
