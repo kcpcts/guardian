@@ -1,6 +1,6 @@
 body, html {
   width: 350px;
-
+  color: #ffffff;
   background-color: #000000;
   margin: 0;
   padding: 0;
@@ -8,53 +8,26 @@ body, html {
   min-height: 145px;
   min-width: 200px;
 }
-/* Dark mode styles */
-.dark-mode body, .dark-mode html {
-  background-color: #000000;
+
+.table {
   color: #ffffff;
 }
 
-.dark-mode .container-fluid {
-  background-color: #000000;
+.table-bordered {
+  border-color: #333333;
 }
 
-
-.dark-mode .container {
-  background-color: #000000;
+.table-bordered th,
+.table-bordered td {
+  border-color: #333333;
 }
-
-.dark-mode .table {
-  background-color: #000000;
-  color: #e0e0e0;
-}
-
-.dark-mode .table th, .dark-mode .table td {
-  border-color: #ffffff;
-}
-
-.dark-mode h6 {
-  color: #ffffff;
-}
-.dark-mode .dark-mode-container {
-  background-color: #1e1e1e; /* Dark background for containers */
-  color: #ffffff; /* Light text color */
-}
-
-.dark-mode .dark-mode-container .btn {
-  background-color: #000000;
-  color: #fff;
-}
-
-
 
 
 * {
   font-family: 'Poppins' !important;
   box-sizing: border-box;
 }
-.bt{opacity:0.8}
-.bt:hover{cursor:pointer;color:white!important;background:black!important}
-.bt:hover h6{color:white!important}
+
 
 .combined-animation {
   background: linear-gradient(to right, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee, #ff0000);
@@ -274,6 +247,7 @@ input::-moz-range-thumb {
   text-align: center;
   position: relative;
   z-index: 1;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Specific background colors for each card */
@@ -367,3 +341,94 @@ input::-moz-range-thumb {
   initial-value: 0deg;
   inherits: false;
 }
+
+
+
+
+/* *********************************** */
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-1: #001aff;
+  --clr-2: #15ff00;
+  --clr-3: #fffb00;
+  --clr-4: #ff8400;
+  --clr-5: #ff0000;
+}
+
+
+
+
+
+
+
+
+
+/* Glowing button styles */
+.bt.card {
+  position: relative;
+  background: transparent;
+  border: none;
+  transition: transform 0.4s ease-in-out;
+  z-index: 1;
+}
+
+
+.bt.card:hover::before {
+  transform: scale(1.028,1.1);
+}
+
+.bt.card::before,
+.bt.card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: inherit;
+  animation: rotation 10s linear infinite;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.bt.card::after {
+  filter: blur(1rem);
+}
+
+.bt.card h6 {
+  background: #ffffff;
+  margin: 2px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+  padding: 10px;
+}
+
+@keyframes rotation {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
+/* Ensure the custom property is defined */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+.bt{opacity:1}
+.bt:hover{cursor:pointer;color:white!important;background:black!important}
+.bt.card h6:hover{cursor:pointer;color:white!important;background:black!important}
+.bt:hover h6{color:white!important}
