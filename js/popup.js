@@ -182,6 +182,7 @@ const updateFX=()=>{
 
         if (totalm > 0 && totalm < min) {
             totalMinutesElement.classList.add('low-gradient');
+            greenBox.style.opacity = "1";
             greenBox.style.boxShadow = "0 0 1px 2px rgba(255, 255, 255, 0.8)";
             greenBox.style.color = "white";
             greenBox.style.background = "#5d9209";
