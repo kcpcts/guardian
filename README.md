@@ -27,9 +27,8 @@ The Scrolling Time Guardian is a Chrome extension designed to help you manage an
 
 ## Installation
 
-1. Visit the [Chrome Web Store](https://chrome.google.com/webstore).
-2. Search for "Scrolling Time Guardian."
-3. Click "Add to Chrome" to install the extension.
+1. Visit the extension on the [Chrome Web Store](https://chromewebstore.google.com/detail/scrolling-time-guardian/phlpehahbacnkpcgnmfajkgolkhodhof).
+2. Click "Add to Chrome" to install the extension.
 
 ## How It Works
 
